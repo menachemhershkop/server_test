@@ -1,13 +1,14 @@
 from fastapi import FastAPI, HTTPException
 import uvicorn
 from pydantic import BaseModel
-
 from encrypt.fance import Fence
+from list_names.saving_names import saveing_names
 
+class Item(BaseModel):
+    text: str
+    offset: int
+    mode: str
 
-def saveing_names(name):
-    with open("names.txt","a") as file:
-        file.write(name)
 app=FastAPI()
 @app.get("/")
 def main():
