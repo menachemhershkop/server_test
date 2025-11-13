@@ -1,10 +1,14 @@
 
 class Fence:
     def encrypy(self,msg):
-        msg = list(msg.replace(" ",""))
+        msg = msg.replace(" ","")
+        double=[]
+        odd=[]
         for i in range(len(msg)):
             if i %2 ==0:
-                msg[i],msg[i+1]=msg[i+1],msg[i]
-
-        return "".join(msg)
-
+                double.append(msg[i])
+            else:
+                odd.append(msg[i])
+        return "".join(double+odd)
+a=Fence()
+print(a.encrypy("1234"))
