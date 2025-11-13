@@ -29,12 +29,12 @@ def caesar(msg:Massage):
     if msg.mode=="encrypt":
         return {"encrypted_text":caesar.encrypy(msg.text,msg.offset)}
     if msg.mode=="decrypt":
-        return {"decryptes_text":caesar.encrypy(msg.text,msg.offset)}
+        return {"decryptes_text":caesar.decrypt(msg.text,msg.offset)}
 @app.get("/fence/encrypt")
 def encrypt(text):
     encrypt=Fence()
     return {"encrypted_text":encrypt.encrypy(text)}
 @app.post("/fence/decrypt")
-def decrypt(msg:Massage):
+def decrypt(msg):
     decrypt=Fence()
-    return {"decrypted":decrypt.encrypy(msg.text)}
+    return {"decrypted":decrypt.encrypy(msg)}
