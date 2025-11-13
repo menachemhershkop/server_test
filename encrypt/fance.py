@@ -1,5 +1,5 @@
 
-class Fance:
+class Fence:
     def encrypy(self,msg):
         msg = list(msg.replace(" ",""))
         for i in range(len(msg)):

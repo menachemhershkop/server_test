@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 import uvicorn
 from pydantic import BaseModel
 
-from encrypt.fance import Fance
+from encrypt.fance import Fence
 
 
 def saveing_names(name):
@@ -23,11 +23,11 @@ def save_user(name):
 @app.post("/caesar")
 def caeser(msg):
     pass
-@app.get("/fence/encrypt?text={text}")
+@app.get("/fence/encrypt")
 def encrypt(text):
-    encrypt=Fance()
+    encrypt=Fence()
     return {"encrypted_text":encrypt.encrypy(text)}
 @app.post("/fence/decrypt")
 def decrypt(msg):
-    decrypt=Fance()
+    decrypt=Fence()
     return {"decrypted":decrypt.encrypy(msg)}
