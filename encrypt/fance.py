@@ -10,5 +10,3 @@ class Fence:
             else:
                 odd.append(msg[i])
         return "".join(double+odd)
-a=Fence()
-print(a.encrypy("1234"))
